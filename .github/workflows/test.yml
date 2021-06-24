@@ -16,7 +16,7 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
-    - name: Run Maven test
+    - name: Run Maven Action
       id: maven-gha
       uses: ./ # Uses an action in the root directory
       with:
@@ -24,4 +24,4 @@ jobs:
         exclude: 'selenium'
     - name: Get project version
       run: |
-        [[ ${{ steps.maven-gha.outputs.project-version }} == "0.1.0-SNAPSHOT" ]] && echo "Works" || echo "Fail" && exit 1
+        [[ ${{ steps.maven-gha.outputs.project-version }} == "0.1.0-SNAPSHOT" ]] && echo "Works" || ( echo "Fail" && exit 1 )
