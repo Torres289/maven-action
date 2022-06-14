@@ -8,10 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to run test
     steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        path: action
     - name: Clone repository
       uses: actions/checkout@v2
       with:
-        repository: 'MasterCloudApps/4.2.Integracion-y-entrega-continua-ejem-1'
+        repository: 'MasterCloudApps/Template-CI-CD'
     - name: Set up JDK 17
       uses: actions/setup-java@v2
       with:
@@ -19,7 +23,7 @@ jobs:
         java-version: '17'
     - name: Run Maven Action
       id: maven-gha
-      uses: ./ # Uses an action in the root directory
+      uses: ./action/
       with:
         package: false
         exclude: 'selenium'
