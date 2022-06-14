@@ -12,10 +12,11 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: 'AIS-Mostoles-2021/pruebas'
-    - name: Set up JDK 11
-      uses: actions/setup-java@v1
+    - name: Set up JDK 17
+      uses: actions/setup-java@v2
       with:
-        java-version: 11
+        distribution: 'adopt'
+        java-version: '17'
     - name: Run Maven Action
       id: maven-gha
       uses: ./ # Uses an action in the root directory
