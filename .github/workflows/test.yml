@@ -27,4 +27,4 @@ jobs:
         exclude: 'selenium'
     - name: Get project version
       run: |
-        [[ ${{ steps.maven-gha.outputs.project-version }} == "0.1.0-SNAPSHOT" ]] && echo "Works" || ( echo "Fail" && exit 1 )
+        [[ ${{ steps.maven-gha.outputs.project-version }} == "0.1.0" ]] && echo "Works" || ( echo "Fail" && exit 1 )
