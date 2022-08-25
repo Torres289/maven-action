@@ -15,10 +15,10 @@ outputs:
 runs:
   using: "composite"
   steps: 
-    - name: Run Selenium test
+    - name: Run Unitary test
       run: mvn -B '-Dtest=*.unitary.*Test' test
       shell: bash
-    - name: Run Selenium test
+    - name: Run Rest test
       run: mvn -B '-Dtest=*.e2e.rest.*Test' test
       shell: bash
     - name: Run Selenium test
